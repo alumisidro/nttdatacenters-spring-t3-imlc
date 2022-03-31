@@ -29,7 +29,7 @@ public class Ejercicio3imlcApplication implements CommandLineRunner {
 		cliente.setNombre("Isidro");
 		cliente.setApellidos("Linares");
 		cliente.setDni("123456789");
-		cliente.setFechaNacimiento(new Date(1996,4,9));
+		// cliente.setFechaNacimiento(new Date(1990,12,30));
 		
 		// Crear cliente 2
 		ClienteEntity cliente2 = new ClienteEntity();
@@ -51,7 +51,10 @@ public class Ejercicio3imlcApplication implements CommandLineRunner {
 		System.out.println("Clientes encontrados: ");
 		
 		for(ClienteEntity client : listaClientes) {
-			System.out.println(client.getNombre() + " " + client.getApellidos());
+			System.out.println(
+					client.getNombre() + " " +
+					client.getApellidos() + " "
+				);
 		}
 	}
 
