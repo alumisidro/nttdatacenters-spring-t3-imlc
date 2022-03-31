@@ -1,5 +1,7 @@
 package com.isidro.ejercicio3;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,8 +30,13 @@ public class Ejercicio3imlcApplication implements CommandLineRunner {
 		// Insertar
 		clienteServicio.insertar(cliente);
 		
+		// Buscar cliente
+		List<ClienteEntity> listaClientes = clienteServicio.buscarPorNombre("Isidro", "Linares");
+		
 		// Mostrar por consola
-		System.out.print(clienteServicio.buscarPorNombre("Isidro", "Linares"));
+		for(ClienteEntity client : listaClientes) {
+			System.out.println("Cliente encontrado: " + client.getNombre());
+		}
 	}
 
 }
