@@ -1,5 +1,6 @@
 package com.isidro.ejercicio3;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,17 +28,26 @@ public class Ejercicio3imlcApplication implements CommandLineRunner {
 		ClienteEntity cliente = new ClienteEntity();
 		cliente.setNombre("Isidro");
 		cliente.setApellidos("Linares");
-		// Insertar
+		
+		// Crear cliente 2
+		ClienteEntity cliente2 = new ClienteEntity();
+		cliente2.setNombre("Isidro");
+		cliente2.setApellidos("Camarena");
+		
+		// Insertar clientes
 		clienteServicio.insertar(cliente);
+		clienteServicio.insertar(cliente2);
 		
 		// Buscar clientes
-		List<ClienteEntity> listaClientes = clienteServicio.buscarPorNombre("Isidro", "Linares");
+		List<ClienteEntity> listaClientesNombre = clienteServicio.buscarPorNombre("Isidro");
+		// List<ClienteEntity> listaClientesApellidos = clienteServicio.buscarPorApellidos("Linares");
+		// List<ClienteEntity> listaClientesNombreApellidos = clienteServicio.buscarPorNombreApellidos("Isidro", "Linares");
 		
 		// Mostrar por consola
 		System.out.println("Clientes encontrados: ");
 		
-		for(ClienteEntity client : listaClientes) {
-			System.out.println(client.getNombre());
+		for(ClienteEntity client : listaClientesNombre) {
+			System.out.println(client.getNombre() + " " + client.getApellidos());
 		}
 	}
 

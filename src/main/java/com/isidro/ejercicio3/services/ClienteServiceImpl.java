@@ -15,11 +15,23 @@ public class ClienteServiceImpl implements IClienteService {
 	ClienteRepository clienteRepository;
 	
 	@Override
-	public List<ClienteEntity> buscarPorNombre(String nombre, String apellidos) {
+	public List<ClienteEntity> buscarPorNombre(String nombre) {
+		List<ClienteEntity> listaClientes = clienteRepository.findByNombre(nombre);
+		return listaClientes;
+	}
+	
+	@Override
+	public List<ClienteEntity> buscarPorApellidos(String apellidos) {
+		List<ClienteEntity> listaClientes = clienteRepository.findByApellidos(apellidos);
+		return listaClientes;
+	}
+	
+	@Override
+	public List<ClienteEntity> buscarPorNombreApellidos(String nombre, String apellidos) {
 		List<ClienteEntity> listaClientes = clienteRepository.findByNombreAndApellidos(nombre, apellidos);
 		return listaClientes;
 	}
-
+	
 	@Override
 	public void insertar(ClienteEntity cliente) {
 		

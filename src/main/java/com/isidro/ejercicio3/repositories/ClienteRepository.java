@@ -10,5 +10,7 @@ import com.isidro.ejercicio3.entities.ClienteEntity;
 @Repository
 public interface ClienteRepository extends JpaRepository<ClienteEntity, Long> {
 
+	public List<ClienteEntity> findByNombre(String nombre);
+	public List<ClienteEntity> findByApellidos(String apellidos);
 	public List<ClienteEntity> findByNombreAndApellidos(String nombre, String apellidos);
 }
