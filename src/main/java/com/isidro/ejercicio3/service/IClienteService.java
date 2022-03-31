@@ -12,5 +12,5 @@ public interface IClienteService {
 	List<ClienteEntity> buscarPorNombreApellidos(String nombre, String apellidos);
 	List<ClienteEntity> mostrarTodo();
 	Optional<ClienteEntity> buscarPorDni(String dni);
-	void insertar(ClienteEntity cliente);
+	void insertarGuardar(ClienteEntity cliente);
 }

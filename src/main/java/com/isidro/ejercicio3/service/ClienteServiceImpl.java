@@ -50,7 +50,7 @@ public class ClienteServiceImpl implements IClienteService {
 	
 	// Insertar
 	@Override
-	public void insertar(ClienteEntity cliente) {
+	public void insertarGuardar(ClienteEntity cliente) {
 		
 		this.clienteRepository.save(cliente);
 		
