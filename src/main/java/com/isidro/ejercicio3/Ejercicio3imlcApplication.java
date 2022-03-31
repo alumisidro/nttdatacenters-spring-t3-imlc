@@ -29,6 +29,7 @@ public class Ejercicio3imlcApplication implements CommandLineRunner {
 		cliente.setNombre("Isidro");
 		cliente.setApellidos("Linares");
 		cliente.setDni("123456789");
+		cliente.setFechaNacimiento(new Date(1996,4,9));
 		
 		// Crear cliente 2
 		ClienteEntity cliente2 = new ClienteEntity();
@@ -41,14 +42,15 @@ public class Ejercicio3imlcApplication implements CommandLineRunner {
 		clienteServicio.insertar(cliente2);
 		
 		// Buscar clientes
-		List<ClienteEntity> listaClientesNombre = clienteServicio.buscarPorNombre("Isidro");
+		List<ClienteEntity> listaClientes = clienteServicio.mostrarTodo();
+		// List<ClienteEntity> listaClientesNombre = clienteServicio.buscarPorNombre("Isidro");
 		// List<ClienteEntity> listaClientesApellidos = clienteServicio.buscarPorApellidos("Linares");
 		// List<ClienteEntity> listaClientesNombreApellidos = clienteServicio.buscarPorNombreApellidos("Isidro", "Linares");
 		
 		// Mostrar por consola
 		System.out.println("Clientes encontrados: ");
 		
-		for(ClienteEntity client : listaClientesNombre) {
+		for(ClienteEntity client : listaClientes) {
 			System.out.println(client.getNombre() + " " + client.getApellidos());
 		}
 	}

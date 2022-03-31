@@ -39,5 +39,10 @@ public class ClienteServiceImpl implements IClienteService {
 		
 	}
 
+	@Override
+	public List<ClienteEntity> mostrarTodo() {
+		return clienteRepository.findAll();
+	}
+
 	
 }
