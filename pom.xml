@@ -11,8 +11,8 @@
 	<groupId>com.isidro</groupId>
 	<artifactId>ejercicio3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ejercicio3imlc</name>
-	<description>Ejercicio 3 - Taller</description>
+	<name>ejercicio3</name>
+	<description>Ejercicio 3</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -21,8 +21,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		
-		<!-- Prueba -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

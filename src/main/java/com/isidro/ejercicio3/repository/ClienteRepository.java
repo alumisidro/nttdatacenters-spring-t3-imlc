@@ -1,11 +1,11 @@
-package com.isidro.ejercicio3.repositories;
+package com.isidro.ejercicio3.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.isidro.ejercicio3.entities.ClienteEntity;
+import com.isidro.ejercicio3.entity.ClienteEntity;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<ClienteEntity, Long> {

@@ -1,4 +1,4 @@
-package com.isidro.ejercicio3.entities;
+package com.isidro.ejercicio3.entity;
 
 import java.util.Date;
 
@@ -12,7 +12,7 @@ import javax.persistence.TemporalType;
 
 
 @Entity(name="CLIENTES")
-public class ClienteEntity /*implements ClienteRepository*/ {
+public class ClienteEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,12 +25,12 @@ public class ClienteEntity /*implements ClienteRepository*/ {
 	@Column(name="APELLIDOS", nullable = false)
 	private String apellidos;
 	
-	//@Temporal(TemporalType.DATE)
-	//@Column(name = "FECHA_NACIMIENTO")
-	//private Date fechaNacimiento;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "FECHA_NACIMIENTO")
+	private Date fechaNacimiento;
 	
-	@Column(name = "DNI")
-	// @Column(name = "DNI", nullable = false, length = 9, unique = true)
+	//@Column(name = "DNI")
+	@Column(name = "DNI", nullable = false, length = 9, unique = true)
 	private String dni;
 	
 	
@@ -41,7 +41,7 @@ public class ClienteEntity /*implements ClienteRepository*/ {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		//this.fechaNacimiento = fechaNacimiento;
+		this.fechaNacimiento = fechaNacimiento;
 		this.dni = dni;
 	}
 
@@ -76,14 +76,14 @@ public class ClienteEntity /*implements ClienteRepository*/ {
 	}
 
 
-	/*public Date getFechaNacimiento() {
+	public Date getFechaNacimiento() {
 		return fechaNacimiento;
-	}*/
+	}
 
 
-	/*public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
-	}*/
+	}
 
 
 	public String getDni() {

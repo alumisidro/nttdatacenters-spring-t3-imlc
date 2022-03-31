@@ -1,12 +1,12 @@
-package com.isidro.ejercicio3.services;
+package com.isidro.ejercicio3.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.isidro.ejercicio3.entities.ClienteEntity;
-import com.isidro.ejercicio3.repositories.ClienteRepository;
+import com.isidro.ejercicio3.entity.ClienteEntity;
+import com.isidro.ejercicio3.repository.ClienteRepository;
 
 @Service
 public class ClienteServiceImpl implements IClienteService {

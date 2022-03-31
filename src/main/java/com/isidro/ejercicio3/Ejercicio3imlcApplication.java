@@ -8,8 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.isidro.ejercicio3.entities.ClienteEntity;
-import com.isidro.ejercicio3.services.ClienteServiceImpl;
+import com.isidro.ejercicio3.entity.ClienteEntity;
+import com.isidro.ejercicio3.service.ClienteServiceImpl;
 
 @SpringBootApplication
 public class Ejercicio3imlcApplication implements CommandLineRunner {
@@ -28,11 +28,13 @@ public class Ejercicio3imlcApplication implements CommandLineRunner {
 		ClienteEntity cliente = new ClienteEntity();
 		cliente.setNombre("Isidro");
 		cliente.setApellidos("Linares");
+		cliente.setDni("123456789");
 		
 		// Crear cliente 2
 		ClienteEntity cliente2 = new ClienteEntity();
 		cliente2.setNombre("Isidro");
 		cliente2.setApellidos("Camarena");
+		cliente2.setDni("987654321");
 		
 		// Insertar clientes
 		clienteServicio.insertar(cliente);

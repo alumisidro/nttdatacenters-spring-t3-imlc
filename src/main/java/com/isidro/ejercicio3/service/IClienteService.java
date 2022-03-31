@@ -1,8 +1,8 @@
-package com.isidro.ejercicio3.services;
+package com.isidro.ejercicio3.service;
 
 import java.util.List;
 
-import com.isidro.ejercicio3.entities.ClienteEntity;
+import com.isidro.ejercicio3.entity.ClienteEntity;
 
 public interface IClienteService {
 
