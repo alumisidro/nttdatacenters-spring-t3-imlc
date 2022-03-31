@@ -2,6 +2,7 @@ package com.isidro.ejercicio3;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -40,6 +41,11 @@ public class Ejercicio3imlcApplication implements CommandLineRunner {
 		// Insertar clientes
 		clienteServicio.insertar(cliente);
 		clienteServicio.insertar(cliente2);
+		
+		// Buscar cliente con X dni
+		Optional<ClienteEntity> clienteDni = clienteServicio.buscarPorDni("987654321");
+		// Mostrar en consola
+		System.out.println("Resultado por DNI: " + clienteDni.get().getNombre() + " " + clienteDni.get().getApellidos() + " ");
 		
 		// Buscar clientes
 		List<ClienteEntity> listaClientes = clienteServicio.mostrarTodo();

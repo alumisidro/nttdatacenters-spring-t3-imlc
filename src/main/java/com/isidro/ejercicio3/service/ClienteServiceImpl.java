@@ -1,6 +1,7 @@
 package com.isidro.ejercicio3.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,6 +60,11 @@ public class ClienteServiceImpl implements IClienteService {
 	@Override
 	public List<ClienteEntity> mostrarTodo() {
 		return this.clienteRepository.findAll();
+	}
+
+	@Override
+	public Optional<ClienteEntity> buscarPorDni(String dni) {
+		return this.clienteRepository.findFirstByDni(dni);
 	}
 
 	
