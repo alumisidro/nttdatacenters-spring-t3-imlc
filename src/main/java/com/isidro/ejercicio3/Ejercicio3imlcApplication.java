@@ -30,12 +30,14 @@ public class Ejercicio3imlcApplication implements CommandLineRunner {
 		// Insertar
 		clienteServicio.insertar(cliente);
 		
-		// Buscar cliente
+		// Buscar clientes
 		List<ClienteEntity> listaClientes = clienteServicio.buscarPorNombre("Isidro", "Linares");
 		
 		// Mostrar por consola
+		System.out.println("Clientes encontrados: ");
+		
 		for(ClienteEntity client : listaClientes) {
-			System.out.println("Cliente encontrado: " + client.getNombre());
+			System.out.println(client.getNombre());
 		}
 	}
 
