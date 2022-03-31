@@ -1,7 +1,14 @@
 package com.isidro.ejercicio3.repositories;
 
-import org.springframework.data.jpa.repository.cdi.JpaRepositoryExtension;
+import java.util.List;
 
-public class ClienteRepository /*extends JpaRepository<ClienteEntity, Long>*/ {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import com.isidro.ejercicio3.entities.ClienteEntity;
+
+@Repository
+public interface ClienteRepository extends JpaRepository<ClienteEntity, Long> {
+
+	public List<ClienteEntity> findByNombreAndApellidos(String nombre, String apellidos);
 }

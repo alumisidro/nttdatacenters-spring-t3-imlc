@@ -10,10 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 
 @Entity(name="CLIENTES")
-public class ClienteEntity /*implements JpaRepository*/ {
+public class ClienteEntity /*implements ClienteRepository*/ {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,10 +25,12 @@ public class ClienteEntity /*implements JpaRepository*/ {
 	@Column(name="APELLIDOS", nullable = false)
 	private String apellidos;
 	
-	@Temporal(TemporalType.DATE)
-	private Date fechaNacimiento;
+	//@Temporal(TemporalType.DATE)
+	//@Column(name = "FECHA_NACIMIENTO")
+	//private Date fechaNacimiento;
 	
-	@Column(name = "DNI", nullable = false, length = 9, unique = true)
+	@Column(name = "DNI")
+	// @Column(name = "DNI", nullable = false, length = 9, unique = true)
 	private String dni;
 	
 	
@@ -40,7 +41,7 @@ public class ClienteEntity /*implements JpaRepository*/ {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.fechaNacimiento = fechaNacimiento;
+		//this.fechaNacimiento = fechaNacimiento;
 		this.dni = dni;
 	}
 
@@ -75,14 +76,14 @@ public class ClienteEntity /*implements JpaRepository*/ {
 	}
 
 
-	public Date getFechaNacimiento() {
+	/*public Date getFechaNacimiento() {
 		return fechaNacimiento;
-	}
+	}*/
 
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	/*public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
-	}
+	}*/
 
 
 	public String getDni() {

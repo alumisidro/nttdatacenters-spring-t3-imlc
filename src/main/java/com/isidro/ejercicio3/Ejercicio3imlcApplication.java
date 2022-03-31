@@ -5,13 +5,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.isidro.ejercicio3.services.IClienteService;
+import com.isidro.ejercicio3.entities.ClienteEntity;
+import com.isidro.ejercicio3.services.ClienteServiceImpl;
 
 @SpringBootApplication
 public class Ejercicio3imlcApplication implements CommandLineRunner {
 
 	@Autowired
-	IClienteService clienteServicio;
+	ClienteServiceImpl clienteServicio;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Ejercicio3imlcApplication.class, args);
@@ -20,7 +21,15 @@ public class Ejercicio3imlcApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		clienteServicio.findByNombreAndApellidos("Isidro", "Linares");
+		// Crear cliente
+		ClienteEntity cliente = new ClienteEntity();
+		cliente.setNombre("Isidro");
+		cliente.setApellidos("Linares");
+		// Insertar
+		clienteServicio.insertar(cliente);
+		
+		// Mostrar por consola
+		System.out.print(clienteServicio.buscarPorNombre("Isidro", "Linares"));
 	}
 
 }
